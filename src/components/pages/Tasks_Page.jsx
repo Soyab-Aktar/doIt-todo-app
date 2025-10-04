@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import CustomDropdown from "../ui/CustomDropdown";
 import { DataContext } from "../context/Context";
+import ActiveTasks from "../taskData/activeTasks/ActiveTasks";
+import CompletedTasks from "../taskData/completedTasks/CompletedTasks";
 
 const Tasks_Page = () => {
   const { selectedOption, tasks, setTasks, resetForm } =
@@ -12,7 +14,7 @@ const Tasks_Page = () => {
 
     const taskData = {
       id: Date.now(),
-      task: formObject.task,
+      taskName: formObject.task,
       priority: selectedOption,
       date: formObject.date,
     };
@@ -28,7 +30,7 @@ const Tasks_Page = () => {
       <h1 className="mb-6 text-2xl font-semibold px-2">Add New Task</h1>
       <form
         onSubmit={handleSubmit}
-        className="bg-[#202127] md:px-6 px-3 py-6 rounded-md grid lg:grid-cols-5 gap-2"
+        className="bg-[#202127] md:px-6 px-3 py-6 rounded-md grid lg:grid-cols-5 gap-2 border border-gray-800"
       >
         {/* input */}
         <input
@@ -61,6 +63,11 @@ const Tasks_Page = () => {
           Add Task
         </button>
       </form>
+      {/* Task List Data */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <ActiveTasks></ActiveTasks>
+        <CompletedTasks></CompletedTasks>
+      </section>
     </div>
   );
 };
