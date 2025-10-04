@@ -20,6 +20,7 @@ const CustomDropdown = ({
       {/* Dropdown Button */}
       <button
         type="button"
+        aria-required
         onClick={() => setIsOpen(!isOpen)}
         className="w-full bg-[#1B1B1F] border border-gray-600 rounded-md px-3 py-3.5 text-left text-white text-sm flex justify-between items-center focus:outline-none focus:border-gray-500"
       >

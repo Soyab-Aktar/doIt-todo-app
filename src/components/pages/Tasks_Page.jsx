@@ -18,6 +18,22 @@ const Tasks_Page = () => {
       priority: selectedOption,
       date: formObject.date,
     };
+    // Validation checks
+    if (!taskData.taskName || taskData.taskName === "") {
+      alert("Please Enter your Task");
+      return;
+    }
+
+    if (!taskData.priority || taskData.priority === "") {
+      alert("Please select a priority level");
+      return;
+    }
+
+    // Optional: Date validation
+    if (!taskData.date || taskData.date === "") {
+      alert("Please select a due date");
+      return;
+    }
 
     console.log("Complete Task :", taskData);
     setTasks((prevTask) => [...prevTask, taskData]);
@@ -34,7 +50,6 @@ const Tasks_Page = () => {
       >
         {/* input */}
         <input
-          required
           name="task"
           type="text"
           placeholder="Type here"
@@ -42,6 +57,7 @@ const Tasks_Page = () => {
         />
         {/* Priority */}
         <CustomDropdown
+          required
           placeholder="Select Priority"
           options={["Normal", "Medium", "High", "Extreme"]}
           onSelect={(value) => console.log("Selected:", value)}
