@@ -8,16 +8,14 @@ import NextTask from "../ui/NextTask";
 
 const Dashboard_Page = () => {
   return (
-    <div className=" flex  flex-col gap-3 py-12 md:px-8 px-2 ">
-      <div className="flex flex-col md:flex-row gap-3 w-full">
-        {/* Task Section: 40% width on md+ */}
-        <div className="flex md:flex-col gap-3 md:w-2/6">
+    <div className=" flex  flex-col gap-3 py-6 md:py-12 md:px-8 px-2 ">
+      <div className="flex flex-col lg:flex-row gap-3 w-full">
+        <div className="flex flex-col md:flex-row lg:flex-col gap-3 lg:w-2/6">
           <ActiveTaskStats /> {/* Position 1 */}
           <CompletedTaskStats /> {/* Position 2 */}
         </div>
 
-        {/* Clock Section: 60% width on md+ */}
-        <div className="flex flex-col md:flex-row gap-3 md:w-4/6">
+        <div className="flex flex-col md:flex-row gap-3 lg:w-4/6">
           <Clock /> {/* Position 3 */}
           <DailyMotivation /> {/* Position 4 */}
         </div>
