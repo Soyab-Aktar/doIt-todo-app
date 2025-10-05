@@ -2,11 +2,24 @@ import { DataContext } from "@/components/context/Context";
 import React, { useContext } from "react";
 import CompletedTask from "./CompletedTask";
 import { MdTask } from "react-icons/md";
+import { showConfirmModal } from "@/utils/sweetAlert";
 
 const CompletedTasks = () => {
   const { completedTasks = [], setCompletedTasks } = useContext(DataContext);
-  const handleClearAll = () => {
-    setCompletedTasks("");
+  const handleClearAll = async () => {
+    console.log("Removing.....");
+    const result = await showConfirmModal({
+      title: "Are you sure?",
+      text: "This action cannot be undone.",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    });
+
+    if (result.isConfirmed) {
+      setCompletedTasks("");
+    } else {
+      return;
+    }
   };
   return (
     <div>

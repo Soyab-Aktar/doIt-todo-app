@@ -1,4 +1,5 @@
 import { DataContext } from "@/components/context/Context";
+import { showConfirmModal, showSuccessModal } from "@/utils/sweetAlert";
 import React, { useContext } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 
@@ -12,11 +13,26 @@ const ActiveTask = ({ task }) => {
     if (checked) {
       completeTask(id);
     }
+    showSuccessModal(`${taskName}`, `Great job! Keep up the excellent work.`);
   };
-  const handleRemove = () => {
+  const handleRemove = async () => {
     console.log("Removing.....");
-    deleteTask(id);
-    console.log("Removed ...");
+    const result = await showConfirmModal({
+      title: "Are you sure?",
+      text: "This action cannot be undone.",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    });
+
+    if (result.isConfirmed) {
+      // User clicked "Yes, delete it!"
+      console.log("User confirmed!");
+      deleteTask(id);
+      console.log("Removed ...");
+    } else {
+      // User clicked "Cancel" or closed modal
+      return;
+    }
   };
 
   return (

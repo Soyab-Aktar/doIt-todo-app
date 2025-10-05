@@ -3,10 +3,10 @@ import CustomDropdown from "../ui/CustomDropdown";
 import { DataContext } from "../context/Context";
 import ActiveTasks from "../taskData/activeTasks/ActiveTasks";
 import CompletedTasks from "../taskData/completedTasks/CompletedTasks";
+import { showSuccessToast, showWarningToast } from "@/utils/sweetAlert";
 
 const Tasks_Page = () => {
-  const { selectedOption, tasks, setTasks, resetForm } =
-    useContext(DataContext);
+  const { selectedOption, setTasks, resetForm } = useContext(DataContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -20,24 +20,24 @@ const Tasks_Page = () => {
     };
     // Validation checks
     if (!taskData.taskName || taskData.taskName === "") {
-      alert("Please Enter your Task");
+      showWarningToast("Please Enter your Task");
       return;
     }
 
     if (!taskData.priority || taskData.priority === "") {
-      alert("Please select a priority level");
+      showWarningToast("Please select a priority level");
       return;
     }
 
     // Optional: Date validation
     if (!taskData.date || taskData.date === "") {
-      alert("Please select a due date");
+      showWarningToast("Please select a due date");
       return;
     }
 
     console.log("Complete Task :", taskData);
     setTasks((prevTask) => [...prevTask, taskData]);
-    console.log(tasks);
+    showSuccessToast("Task Added");
     e.target.reset();
     resetForm();
   };

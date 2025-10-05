@@ -50,9 +50,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <span className="text-3xl font-bold">
+          <NavLink to={`/`} className="text-3xl font-bold">
             Do<span className="text-[#f04343] ">IT</span>
-          </span>
+          </NavLink>
         </div>
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 font-semibold">
