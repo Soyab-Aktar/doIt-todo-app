@@ -13,7 +13,7 @@ const ActiveTaskStats = () => {
       : Math.round((completedTasks.length / totalTasks) * 100);
 
   return (
-    <div className="bg-[#202127] p-6 rounded-md border border-gray-800 flex flex-col gap-4 md:w-1/2 lg:w-full">
+    <div className="bg-[#202127] p-6 rounded-md border border-gray-800 flex flex-col gap-4 md:w-1/2 lg:w-full ">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>

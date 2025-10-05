@@ -24,7 +24,7 @@ const Clock = () => {
   const seconds = currentTime.getSeconds().toString().padStart(2, "0");
 
   return (
-    <div className="bg-[#202127] p-6 rounded-md border border-gray-800 flex flex-col items-center justify-center h-full md:w-1/2">
+    <div className="bg-[#202127] p-6 rounded-md border border-gray-800 flex flex-col items-center justify-center h-full lg:w-1/2">
       {/* Time Display */}
       <div className="flex items-center text-4xl md:text-5xl font-bold mb-3">
         <span className="text-white">{hours}</span>

@@ -15,7 +15,7 @@ const Dashboard_Page = () => {
           <CompletedTaskStats /> {/* Position 2 */}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-3 lg:w-4/6">
+        <div className="flex flex-col lg:flex-row gap-3 lg:w-4/6">
           <Clock /> {/* Position 3 */}
           <DailyMotivation /> {/* Position 4 */}
         </div>
