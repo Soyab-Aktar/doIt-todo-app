@@ -26,7 +26,7 @@ const ActiveTaskStats = () => {
       </div>
 
       {/* Big Number */}
-      <div className="text-3xl font-bold text-white">{tasks.length}</div>
+      <div className="text-3xl font-bold text-yellow-500">{tasks.length}</div>
 
       {/* Progress Bar */}
       <div className="space-y-2">
