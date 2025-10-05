@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./components/layout/HomePage";
 import Dashboard_Page from "./components/pages/Dashboard_Page";
 import Tasks_Page from "./components/pages/Tasks_Page";
-import Calender_page from "./components/pages/Calender_page";
+
 import Context from "./components/context/Context";
 
 const router = createBrowserRouter([
@@ -20,10 +20,6 @@ const router = createBrowserRouter([
       {
         path: "/tasks",
         element: <Tasks_Page></Tasks_Page>,
-      },
-      {
-        path: "/calender",
-        element: <Calender_page></Calender_page>,
       },
     ],
   },
