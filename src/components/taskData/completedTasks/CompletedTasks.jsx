@@ -25,10 +25,10 @@ const CompletedTasks = () => {
             <div className="flex flex-col items-center justify-center gap-3 text-gray-400">
               <MdTask className="text-9xl" />
 
-              <p className="text-xl">No active tasks yet</p>
+              <p className="text-xl">Your wins will appear here</p>
             </div>
             <p className="text-gray-500 text-sm mt-2">
-              Add a task to get started!
+              Track your progress by completing tasks!
             </p>
           </div>
         ) : (

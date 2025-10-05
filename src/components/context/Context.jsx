@@ -1,10 +1,14 @@
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { createContext, useState } from "react";
 
 export const DataContext = createContext();
 const Context = ({ children }) => {
   const [selectedOption, setSelectedOption] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const [completedTasks, setCompletedTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage("doIt-tasks", []);
+  const [completedTasks, setCompletedTasks] = useLocalStorage(
+    "doIt-completedTasks",
+    []
+  );
   const resetForm = () => setSelectedOption("");
   const deleteTask = (taskId) => {
     setTasks((prevTasks) => {
