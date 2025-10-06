@@ -62,7 +62,9 @@ const WeekCalendar = () => {
               }
             `}
           >
-            <div className="font-medium">{weekDays[index]}</div>
+            <div className="text-xs md:text-lg font-medium md:font-semibold">
+              {weekDays[index]}
+            </div>
             <div className="text-lg">{date.getDate()}</div>
             <div
               className={`p-1 w-0.5 mx-auto rounded-full ${

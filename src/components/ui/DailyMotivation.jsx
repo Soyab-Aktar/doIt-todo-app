@@ -46,11 +46,17 @@ const DailyMotivation = () => {
           transform transition-all duration-300 
           group-hover:text-gray-300 relative"
         >
-          <span className="relative">
+          <span className="flex flex-col items-center gap-1">
             — {currentQuote.author}
+            {/* <span
+              className="absolute -bottom-1 left-0 md:w-0 h-0.5 bg-green-400 
+              transition-all duration-300 group-hover:w-full w-full"
+            ></span> */}
+            {/* <progress className="progress progress-success w-3/5"></progress> */}
             <span
-              className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-400 
-              transition-all duration-300 group-hover:w-full"
+              className="loading loading-dots loading-xl text-green-400
+          transform transition-all duration-300 
+          group-hover:scale-110  group-hover:text-green-300"
             ></span>
           </span>
         </cite>

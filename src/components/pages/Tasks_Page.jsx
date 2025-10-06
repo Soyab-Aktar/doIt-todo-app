@@ -7,6 +7,7 @@ import { showSuccessToast, showWarningToast } from "@/utils/sweetAlert";
 
 const Tasks_Page = () => {
   const { selectedOption, setTasks, resetForm } = useContext(DataContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -65,11 +66,34 @@ const Tasks_Page = () => {
 
         {/* Date */}
 
-        <input
-          name="date"
-          type="datetime-local"
-          className="col-span-1 input w-full text-gray-400 rounded-md bg-[#1B1B1F] focus:outline focus:outline-gray-500 border border-gray-600 py-6 "
-        />
+        <div className="relative col-span-1">
+          <input
+            name="date"
+            type="datetime-local"
+            className="input w-full text-gray-400 rounded-md bg-[#1B1B1F] focus:outline focus:outline-gray-500 border border-gray-600 py-6"
+            onFocus={(e) => {
+              // Hide placeholder when focused
+              e.target.nextElementSibling?.classList.add("hidden");
+            }}
+            onBlur={(e) => {
+              // Show placeholder when empty and unfocused
+              if (!e.target.value) {
+                e.target.nextElementSibling?.classList.remove("hidden");
+              }
+            }}
+            onChange={(e) => {
+              // Hide placeholder when there's a value
+              if (e.target.value) {
+                e.target.nextElementSibling?.classList.add("hidden");
+              } else {
+                e.target.nextElementSibling?.classList.remove("hidden");
+              }
+            }}
+          />
+          <span className="text-sm absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none md:hidden">
+            Date & Time
+          </span>
+        </div>
 
         {/* button */}
         <button
