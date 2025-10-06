@@ -2,6 +2,9 @@ import Swal from 'sweetalert2';
 
 // Simple breakpoint detection
 const getToastPosition = () => {
+  // Check if window exists (browser environment)
+  if (typeof window === 'undefined') return 'top';
+  
   const width = window.innerWidth;
   
   if (width < 640) return 'top'; // Mobile

@@ -3,7 +3,7 @@ import CustomDropdown from "../ui/CustomDropdown";
 import { DataContext } from "../context/Context";
 import ActiveTasks from "../taskData/activeTasks/ActiveTasks";
 import CompletedTasks from "../taskData/completedTasks/CompletedTasks";
-import { showSuccessToast, showWarningToast } from "@/utils/sweetAlert";
+import { showSuccessToast, showWarningToast } from "../../utils/sweetAlert";
 
 const Tasks_Page = () => {
   const { selectedOption, setTasks, resetForm } = useContext(DataContext);
